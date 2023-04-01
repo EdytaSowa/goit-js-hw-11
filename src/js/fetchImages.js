@@ -10,15 +10,16 @@ export const fetchImages = async text => {
         `${KEY}` +
         '&q=' +
         `${text}` +
-        '&image_type=photo&orientation=horizontal&safesearch=true'
+        '&image_type=photo&orientation=horizontal&safesearch&per&per_page=40'
     );
-
+    // console.log(firstResponse);
     const images = firstResponse.data.hits;
+    // const totalHits = firstResponse.data.totalHits;
+
+    // console.log(totalHits);
 
     // console.log(images);
     return images;
-
-    
   } catch (error) {
     console.error(error);
   }
